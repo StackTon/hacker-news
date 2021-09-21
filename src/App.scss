@@ -1,0 +1,39 @@
+@mixin md-screen {
+    @media only screen and (max-width: 1176px) {
+        @content;
+    }
+}
+
+.app {
+    margin: 20px;
+    h1 {
+        text-align: center;
+    }
+
+    .articles {
+        display: flex;
+        flex-wrap: wrap;
+        .article {
+            border: 1px solid black;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin: 10px;
+            padding: 10px;
+            flex-basis: 48%;
+            height: 250px;
+            display: flex;
+            flex-direction: row;
+            @include md-screen {
+                flex-grow: 4;
+            }
+            img {
+                width: 200px;
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            .info {
+                padding: 10px;
+            }
+        }
+    }
+}
